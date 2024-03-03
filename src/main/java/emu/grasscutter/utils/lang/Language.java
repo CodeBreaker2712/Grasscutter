@@ -163,7 +163,7 @@ public final class Language {
      * @param key The flattened key of the current element
      * @param element The current element
      */
-    private static void putFlattenedKey(Map<String, String> map, String key, JsonElement element) {
+    static void putFlattenedKey(Map<String, String> map, String key, JsonElement element) {
         if (element.isJsonObject()) {
             element
                     .getAsJsonObject()

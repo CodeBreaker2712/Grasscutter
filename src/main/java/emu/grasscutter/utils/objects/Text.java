@@ -1,4 +1,4 @@
-package emu.grasscutter.utils.objects.text;
+package emu.grasscutter.utils.objects;
 
 import java.awt.*;
 import lombok.*;

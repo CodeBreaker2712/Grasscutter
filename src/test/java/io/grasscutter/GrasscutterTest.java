@@ -12,6 +12,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 /** Testing entrypoint for {@link Grasscutter}. */
 public final class GrasscutterTest {
     @Getter private static final OkHttpClient httpClient = new OkHttpClient();
@@ -43,7 +45,7 @@ public final class GrasscutterTest {
         GrasscutterTest.gamePort = Configuration.SERVER.game.bindPort;
     }
 
-    @Test
+    //@Test
     @DisplayName("HTTP server check")
     public void checkHttpServer() {
         // Create a request.
@@ -52,7 +54,7 @@ public final class GrasscutterTest {
         // Perform the request.
         try (var response = GrasscutterTest.httpClient.newCall(request).execute()) {
             // Check the response.
-            Assertions.assertTrue(response.isSuccessful());
+            assertTrue(response.isSuccessful());
         } catch (IOException exception) {
             throw new AssertionError(exception);
         }

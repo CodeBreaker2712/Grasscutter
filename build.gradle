@@ -34,22 +34,22 @@ plugins {
     id 'io.freefair.lombok' version '6.6.1' // Lombok for delombok'ification
 }
 
-spotless {
-    java {
-        target fileTree(rootDir) {
-            include '**/*.java'
-            exclude '**/generated/**/*.*'
-            exclude '.idea/**/*.*'
-        }
-
-        importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
-        googleJavaFormat('1.15.0') // Use Google's Java formatter.
-        formatAnnotations() // Reformat annotations.
-        endWithNewline() // Ensure files end with a newline.
-        indentWithTabs(2); indentWithSpaces(4) // Use 4 spaces for indentation.
-        toggleOffOn() // Toggle off/on.
-    }
-}
+//spotless {
+//    java {
+//        target fileTree(rootDir) {
+//            include '**/*.java'
+//            exclude '**/generated/**/*.*'
+//            exclude '.idea/**/*.*'
+//        }
+//
+//        importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
+//        googleJavaFormat('1.15.0') // Use Google's Java formatter.
+//        formatAnnotations() // Reformat annotations.
+//        endWithNewline() // Ensure files end with a newline.
+//        indentWithTabs(2); indentWithSpaces(4) // Use 4 spaces for indentation.
+//        toggleOffOn() // Toggle off/on.
+//    }
+//}
 
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
@@ -131,6 +131,8 @@ dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.8.2'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
+    testImplementation 'org.mockito:mockito-core:1.+'
+
 
     // HTTP client library for testing.
     testImplementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0'

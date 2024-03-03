@@ -103,7 +103,7 @@ public final class TsvUtils {
     @SuppressWarnings("deprecated")
     // Field::isAccessible is deprecated because it doesn't do what people think it does. It does what
     // we want it to, however.
-    private static Function<String, Object> makeEnumTypeParser(Class<?> enumClass) {
+    static Function<String, Object> makeEnumTypeParser(Class<?> enumClass) {
         if (!enumClass.isEnum()) {
             // System.out.println("Called makeEnumTypeParser with non-enum enumClass "+enumClass);
             return null;
